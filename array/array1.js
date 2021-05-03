@@ -42,3 +42,4 @@ funArr[1]();
 var arrArr = [["索引0",11,12,13],["索引1",21,22,23],["索引2",31,32,33]]
 console.log(arrArr);
 console.log(arrArr[1][2]); //打印arrArr數組中的索引1的索引2
+console.log(arrArr);
