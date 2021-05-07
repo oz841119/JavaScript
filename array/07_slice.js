@@ -11,6 +11,7 @@
  *
  */
 
+
 let arr = ["張學友","周潤發","梁朝偉","劉德華","張曼玉"];
 let newArr = arr.slice(1,3);
 console.log(newArr);
