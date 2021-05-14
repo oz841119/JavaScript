@@ -1,5 +1,6 @@
-function openWeb(){
-     input = prompt("Enter you name")
+let ar2e = 0
+function fun(){
+     ar2e = 567;
 }
-
-openWeb();
+fun()
+console.log(ar2e);
