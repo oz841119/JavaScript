@@ -1,0 +1,21 @@
+div {
+    margin:0px auto;
+    width:600px;
+}
+
+#divH1 {
+    text-align:center;
+    margin:0px auto;
+}
+
+#arrgeDiv {
+    border: 1px solid black;
+    text-align:center;
+    height: 200px;
+    overflow: scroll;
+}
+
+#checkboxAndBtn {
+    text-align:center;
+}
+
