@@ -1,0 +1,13 @@
+#box1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    /* 必須開啟定位*/
+    position: absolute;
+}
+
+
+body {
+    height: 1000px;
+}

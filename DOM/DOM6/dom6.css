@@ -1,0 +1,15 @@
+div {
+    width: 500px;
+    border: 1px solid black;
+}
+
+#areaDiv {
+    height: 300px;
+}
+
+#showMsg {
+    text-align: center;
+    line-height : 30px;
+    color: red;
+    height: 30px;
+}
