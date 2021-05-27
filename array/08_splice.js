@@ -25,3 +25,17 @@ let deletedNewArr2 = arr.splice(2,1,"瑪麗蓮夢露")
 console.log(deletedNewArr2);
 console.log(arr);
 
+
+
+let myArray = [
+    { age: 21 },
+    { name: 'Sara' },
+    { test01: 'bla' },
+    { test02: 'bla' }
+  ];
+
+  console.log(myArray);
+  
+  
+  myArray.splice(0,1,{ test: "Jhon" })
+  console.log(myArray);
