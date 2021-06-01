@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鍵盤移動Box</title>
+
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+
+        }
+        
+
+    </style>
+
+    <script>
+        window.onload = function(){
+            
+            let speed = 10;   
+
+            document.onkeydown = function(event){
+                switch(event.keyCode){
+                    case 37 : //向左 left值減少
+                        box1.style.left = box1.offsetLeft - speed + "px";
+                        break;
+                    case 39 : //向右
+                        box1.style.left = box1.offsetLeft + speed + "px";
+                        break;
+                    case 38 : //向上
+                        box1.style.top = box1.offsetTop - speed + "px";
+                        break;
+                    case 40 : //向下
+                        box1.style.top = box1.offsetTop + speed + "px"
+                }
+            }
+
+            btnSpeed.onclick = function(){
+                    speed = speed + 10
+                    btnSpeed.innerHTML = `Speed(${speed})`;
+                    if(speed > 100){
+                        btnSpeed.innerHTML = `沒有減少鈕(${speed})`;
+                    }
+                }
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="box1">
+        <button id="btnSpeed">Speed++</button>
+    </div>
+</body>
+</html>
