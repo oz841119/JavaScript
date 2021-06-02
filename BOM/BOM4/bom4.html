@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            /*由於ie8會默認left為auto 所以需要設置left */
+            left: 0; 
+        }
+
+        #line1{
+            width: 0px;
+            height: 1000px;
+            border-left: 1px black solid;
+            position: absolute;
+            left: 800px;
+            top: 0px;
+        }
+    </style>
+    <script>
+
+        window.onload = function(){
+            
+            
+            let box1 = document.getElementById("box1");
+            let btn = document.getElementById("btn");
+            let btn2 = document.getElementById("btn2");
+
+            let intBox1Move; // box向右的定時器
+
+            /*
+             *  一個通用函式 獲取指定元素當前的樣式
+             *    參數:
+             *          obj 要獲取樣式的元素
+             *          name 要獲取的樣式名
+             */  
+             function getStyle(obj , name){
+                if(window.getComputedStyle){
+                    //正常瀏覽器的方式 具有getComputedStyle()方法
+                    return getComputedStyle(obj , null)[name];
+                }else{
+                    // IE8的方式 沒有getComputedStyle()方法
+                    return obj.getComputedStyle[name];
+                }
+            }
+            
+            // 先宣告定時器的全局變量 才能讓定時器開啟時先關閉定時器
+            let timer;
+
+            //點擊按鈕後 box向右移動(left值增大)
+            btn.onclick = function(){
+
+                clearInterval(timer);
+
+                timer = setInterval(function(){
+
+                    // 獲取box1原來的left值 並使用parseInt取整
+                    let oldValue = parseInt(getStyle(box1 , "left"));
+                    
+                    // 在舊值基礎上增加
+                    let newValue = oldValue + 19;
+                    
+                    // 避免超出line1線 將值設於800
+                    if(newValue > 800){
+                        newValue = 800;
+                    }
+                    // 將新值設置給box1
+                    box1.style.left = newValue + "px";
+                    
+                    // 當lefr = 800時關閉定時器
+                    if(newValue >= 800){
+                        clearInterval(timer);
+                    }
+
+                } , 30);
+            }
+
+
+
+            //點擊按鈕後 box向左移動(left值減少)
+            btn2.onclick = function(){
+
+                clearInterval(timer);
+
+                timer = setInterval(function(){
+
+                    // 獲取box1原來的left值 並使用parseInt取整
+                    let oldValue = parseInt(getStyle(box1 , "left"));
+                    
+                    // 在舊值基礎上減少
+                    let newValue = oldValue - 19;
+                    
+                    // 避免超出最左側 將值設於0
+                    if(newValue < 0){
+                        newValue = 0;
+                    }
+                    // 將新值設置給box1
+                    box1.style.left = newValue + "px";
+                    
+                    // 當lefr = 0時關閉定時器
+                    if(newValue == 0){
+                        clearInterval(timer);
+                    }
+
+                } , 30);
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+
+    </br>
+    <button id="btn">點擊按鈕後 box向右移動</button>
+    <button id="btn2">點擊按鈕後 box向左移動</button>
+
+    </br></br>
+    <div id="box1">box1</div>
+
+    <div id="line1"></div>
+
+</body>
+</html>
