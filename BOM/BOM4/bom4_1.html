@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../../tools/tools.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            /*由於ie8會默認left為auto 所以需要設置left */
+            left: 0px; 
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            /*由於ie8會默認left為auto 所以需要設置left */
+            left: 0; 
+            top: 200px;
+        }
+
+        #line1{
+            width: 0px;
+            height: 1000px;
+            border-left: 1px black solid;
+            position: absolute;
+            left: 800px;
+            top: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    </br>
+    <button id="btn">點擊按鈕後 box向右移動</button>
+    <button id="btn2">點擊按鈕後 box向左移動</button>
+    <button id="btn3">點擊按鈕後 box2向右移動</button>
+    <button id="btn4">測試用按鈕</button>
+
+    </br></br>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+
+    <div id="line1"></div>
+
+</body>
+</html>
