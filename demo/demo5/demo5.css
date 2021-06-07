@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#divImgSwitch{
+    width: 532px;
+    height: 512px;
+    margin: 50px auto;
+    background-color: yellow;
+    padding: 10px 0;
+    position: relative; /* 相對定位 */
+    overflow: hidden; /* 裁剪超出div容器的部分 */
+}
+
+#ulImgSwitch{
+    list-style: none;
+    position: absolute ; /* 開啟絕對定位 並給上級開啟相對定位 */
+    /* 寬度width不寫死 用javascript獲取 */
+}
+
+#ulImgSwitch li{
+    float: left;
+    margin: 0 10px;
+}
+
+#divNav{
+    position: absolute;
+    bottom: 30px; /* 垂直位置 */
+    /* 舊方法：水平位置由js去設置 */
+}
+
+#divNav a{
+    float: left; /* 浮動 */
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    margin: 0 5pX; /* 左右外邊距 */
+    opacity: 0.5; /* 透明度 */
+    filter: alpha(opacity = 50); /* 兼容IE8 透明度 */
+    
+}
+
+/* 滑鼠移到導航時的效果 */
+#divNav  a:hover{
+    background-color: black;
+}

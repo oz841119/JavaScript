@@ -1,0 +1,12 @@
+/* html中 box的class為b1 */
+.b1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+/* 將在JS中修改為b2樣式 */
+.b2{
+    width: 300px;
+    background-color: yellow;
+}

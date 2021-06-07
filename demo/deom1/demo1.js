@@ -13,6 +13,7 @@ window.onload = function(){
         "img/photoshop.png",
         "img/premier.png",
     ];
+
     
     // 宣告一個變量 用來對應索引
     let index = 0;
