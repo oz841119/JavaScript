@@ -1,18 +1,7 @@
-let myArray = [
-     { test: 'Jhon' },
-     { name: 'Sara' },
-     { test01: 'Domnic' },
-     { test02: 'Bravo' }
-   ];
+function add(c , d){
+  return c + d;
+}
 
-   console.log("Before");
-   console.log(myArray);
-   
-   myArray = myArray.map(r => {
-     if (r.hasOwnProperty("name")) {
-       return {name: "Praveen"};
-     }
-     return r;
-   });
-   console.log("After");
-   console.log(myArray);
+let ts = {a:1 , b:2}
+console.log(add(2,3,5));
+console.log(add.apply(ts , [3,5]));
